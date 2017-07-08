@@ -1,0 +1,25 @@
+{
+  "name": "node-red-contrib-mcp23017chip",
+  "version": "0.0.1",
+  "description": "node-red node for mcp23017 - input and output",
+  "dependencies": {},
+  "keywords": [
+    "node-red",
+    "mcp23017"
+  ],
+  "node-red": {
+    "nodes": {
+      "mcp23017chip": "mcp23017chip/mcp23017chip.js"
+    }
+  },
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "author": "Mike Wilson",
+  "license": "MIT"
+}

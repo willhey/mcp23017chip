@@ -1,0 +1,153 @@
+<!-- CHIP SECTION -->
+<script type="text/javascript">
+    RED.nodes.registerType('mcp23017chip',{
+        category: 'config',
+        defaults: {
+            addr: {value:"0x20",required:true},
+            interval: {value:100,required:true},
+        },
+        label: function() {
+            return this.addr;
+        }
+	
+    });
+</script>
+
+<script type="text/x-red" data-template-name="mcp23017chip">
+	<div class="form-row">
+		<label for="node-config-input-addr"><i class="icon-bookmark"></i> Address</label>
+		<select type="text" id="node-config-input-addr" style="width:70px;">
+            <option value="0x20">0x20</option>
+            <option value="0x21">0x21</option>
+            <option value="0x22">0x22</option>
+            <option value="0x23">0x23</option>
+            <option value="0x24">0x24</option>
+            <option value="0x25">0x25</option>
+            <option value="0x26">0x26</option>
+            <option value="0x27">0x27</option>
+        </select>
+	</div>     
+	<div class="form-row">
+		<label for="node-config-input-interval"><i class="icon-bookmark"></i> Interval in ms</label>
+		<input type="number" id="node-config-input-interval">
+	</div>
+ </script>   
+ 
+    
+ <!-- INPUT SECTION -->   
+    
+ <script type="text/javascript">
+RED.nodes.registerType('mcp23017input',{
+	category: 'input',
+	color: '#a6bbcf',
+	defaults: {
+		name: {value:""},
+		chip: {type:"mcp23017chip", required:true},
+		bitNum: {required:true},
+		pullUp: {value:true},
+		invert: {value:true},
+		debounce: {value:200},
+		onMsg: {value:true},
+		offMsg: {value:true}
+	},
+	inputs:0,
+	outputs:1,
+	icon: "file.png",
+	label: function() {
+		return this.name||"mcp23017input";
+	}
+});
+</script>
+
+<script type="text/x-red" data-template-name="mcp23017input">
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+	</div>
+	<div class="form-row">
+		<label for="node-input-chip"><i class="fa fa-globe"></i> Chip</label>
+		<input type="text" id="node-input-chip">
+	</div>
+	<div class="form-row">
+		<label for="node-input-bitNum"><i class="icon-tag"></i> Bit Number</label>
+		<input type="number" id="node-input-bitNum" placeholder="Bit Number">
+	</div>
+	<div class="form-row">
+		<label for="node-input-pullUp"><i class="icon-tag"></i> Pull Up</label>
+		<input type="checkbox" id="node-input-pullUp" placeholder="Pull Up">
+	</div>
+	<div class="form-row">
+		<label for="node-input-invert"><i class="icon-tag"></i> Invert</label>
+		<input type="checkbox" id="node-input-invert" placeholder="Invert">
+	</div>
+	<div class="form-row">
+		<label for="node-input-debounce"><i class="icon-tag"></i> Debounce Time</label>
+		<input type="number" id="node-input-debounce" placeholder="Debounce Time">
+	</div>
+	<div class="form-row">
+		<label for="node-input-onMsg"><i class="icon-tag"></i> On Msg</label>
+		<input type="checkbox" id="node-input-onMsg" placeholder="On Msg">
+	</div>
+	<div class="form-row">
+		<label for="node-input-offMsg"><i class="icon-tag"></i> Off Msg</label>
+		<input type="checkbox" id="node-input-offMsg" placeholder="Off Msg">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="mcp23017input">
+	<p>MCP23017 has 16 pins - can be individually selected as in or out</p>
+	<p> The MCP23017Chip node manages the chip (all 16 i/o).  This node has the interval to keep reading the input buffer</p>
+	<p> The Bit or pin individually can set the pull-up and inverton on the chip.  The On/Off Msg checkboxs are used to allow messages on change.  The status will change anyway regardless of the on/off msg </p>
+	<p> The debounce sets the time required for a state to be steady before changing the status and sending a message</p>
+</script>
+
+
+
+<!-- OUTPUT SECTION -->   
+    
+ <script type="text/javascript">
+RED.nodes.registerType('mcp23017output',{
+	category: 'output',
+	color: '#a6bbcf',
+	defaults: {
+		name: {value:""},
+		chip: {type:"mcp23017chip", required:true},
+		bitNum: {required:true},
+		invert: {value:true}
+	},
+	inputs:1,
+	outputs:1,
+	icon: "file.png",
+	label: function() {
+		return this.name||"mcp23017output";
+	}
+});
+</script>
+
+
+<script type="text/x-red" data-template-name="mcp23017output">
+	<div class="form-row">
+		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+	</div>
+	<div class="form-row">
+		<label for="node-input-chip"><i class="fa fa-globe"></i> Chip</label>
+		<input type="text" id="node-input-chip">
+	</div>
+	<div class="form-row">
+		<label for="node-input-bitNum"><i class="icon-tag"></i> Bit Number</label>
+		<input type="number" id="node-input-bitNum" placeholder="Bit Number">
+	</div>
+	<div class="form-row">
+		<label for="node-input-invert"><i class="icon-tag"></i> Invert</label>
+		<input type="checkbox" id="node-input-invert" placeholder="Invert">
+	</div>
+</script>
+
+<script type="text/x-red" data-help-name="mcp23017ouput">
+	<p>MCP23017 has 16 pins - can be individually selected as in or out</p>
+	<p> The MCP23017Chip node manages the chip (all 16 i/o)  mainly for the input monitoring</p>
+	<p> The message to the output requires a payload.  If the payload is true then it turns on</p>
+	<p> Topic (and any other part) is ignored</p>
+</script>
+
