@@ -15,5 +15,5 @@ Uses the config node mcp23017chip for all reading and writing on i2c
 Requires i2c-bus
 
 To Do
-D1) ont allow already selected bits to be selected again
+1) Don't allow already selected bits to be selected again
 2) When a node is deleted - remove from ids (array in chip)
