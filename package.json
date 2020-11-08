@@ -1,5 +1,5 @@
 {
-  "name": "node-red-contrib-mcp23017chip",
+  "name": "red-contrib-mcp23017chip",
   "version": "0.0.3",
   "description": "node-red node for mcp23017 - input and output",
   "dependencies": {
