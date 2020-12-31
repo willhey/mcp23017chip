@@ -1,6 +1,6 @@
 {
   "name": "red-contrib-mcp23017chip",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "node-red node for mcp23017 - input and output",
   "dependencies": {
     "i2c-bus": "~5.2.1"
