@@ -1,23 +1,23 @@
 # A Node-Red node for the MCP23017 chip
-	About Node-Red: https://nodered.org/
-	Link for the chip itself: https://www.microchip.com/wwwproducts/en/MCP23017
-	PDF: https://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf
-	Node-RED node link: https://flows.nodered.org/node/node-red-contrib-mcp23017chip
+	About Node-Red [link...](https://nodered.org/) 
+	[Link for the chip itself](https://www.microchip.com/wwwproducts/en/MCP23017)
+	[Chip specs. PDF](https://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf)
+	[Node-RED node](https://flows.nodered.org/node/node-red-contrib-mcp23017chip)
 
 # Code Language: 
-	Node.js https://nodejs.org
-	JavaScript https://en.wikipedia.org/wiki/JavaScript
-	HTML https://en.wikipedia.org/wiki/HTML
+	[Node.js](https://nodejs.org)
+	[JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+	[HTML](https://en.wikipedia.org/wiki/HTML)
 
 # About
 	It uses the config node "mcp23017chip" for all reading and writing on i2c bus
-	More about I2C: https://en.wikipedia.org/wiki/I%C2%B2C
+	[More about I2C...](https://en.wikipedia.org/wiki/I%C2%B2C)
 
 	- Each pin (16 in total) can be individually selected to be an input or output
 	- You need to place as many Nodes to your flows as many pins you use.
-	- 4 states of a node: On=green   Off=grey   Uninitialised=yellow   Error=red
+	- 4 states of a node: `On=green`   `Off=grey`   `Uninitialised=yellow`   `Error=red`
 
-	Requires 'i2c-bus' module: https://github.com/fivdi/i2c-bus
+	Requires 'i2c-bus' module. [link...](https://github.com/fivdi/i2c-bus)
 	( _It gets automatically installed, except if you want to use it directly from function nodes._ )
 
 # Inputs
@@ -56,11 +56,12 @@
 2. When a node is deleted - remove from ids (array in chip)
 3. Block RW operations happening at the same time... (rework everything to Async / await and atomic flags)
 4. Analize how interrupts are dealt with in C code and write it in JavaScript. 
- Example in C language here: https://www.arduinolibraries.info/libraries/mcp23017
+ Example in C language [here...](https://www.arduinolibraries.info/libraries/mcp23017)
 
 
 
-# Change Log 2021-01-11 (Y-M-D) by L·szlÛ Szakm·ri (www.pizzaprogram.hu)
+# Change Log 2021-01-11 (Y-M-D) 
+by L√°szl√≥ Szakm√°ri (www.pizzaprogram.hu)
 
 - **!!! IMPORTANT CHANGE:**
  -- [ x ] Inverse is now affecting Output too ! 
