@@ -1,24 +1,27 @@
 # A Node-Red node for the MCP23017 chip
-	About Node-Red [link...](https://nodered.org/) 
-	[Link for the chip itself](https://www.microchip.com/wwwproducts/en/MCP23017)
-	[Chip specs. PDF](https://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf)
-	[Node-RED node](https://flows.nodered.org/node/node-red-contrib-mcp23017chip)
+
+- About Node-Red [link...](https://nodered.org/) 
+- [Link for the chip itself](https://www.microchip.com/wwwproducts/en/MCP23017)
+- [Chip specs. PDF](https://ww1.microchip.com/downloads/en/DeviceDoc/20001952C.pdf)
+- [Node-RED node](https://flows.nodered.org/node/node-red-contrib-mcp23017chip)
 
 # Code Language: 
-	[Node.js](https://nodejs.org)
-	[JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-	[HTML](https://en.wikipedia.org/wiki/HTML)
+
+- [Node.js](https://nodejs.org)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+- [HTML](https://en.wikipedia.org/wiki/HTML)
 
 # About
-	It uses the config node "mcp23017chip" for all reading and writing on i2c bus
-	[More about I2C...](https://en.wikipedia.org/wiki/I%C2%B2C)
 
-	- Each pin (16 in total) can be individually selected to be an input or output
-	- You need to place as many Nodes to your flows as many pins you use.
-	- 4 states of a node: `On=green`   `Off=grey`   `Uninitialised=yellow`   `Error=red`
+It uses the config node "mcp23017chip" for all reading and writing on i2c bus
+[More about I2C...](https://en.wikipedia.org/wiki/I%C2%B2C)
 
-	Requires 'i2c-bus' module. [link...](https://github.com/fivdi/i2c-bus)
-	( _It gets automatically installed, except if you want to use it directly from function nodes._ )
+- Each pin (16 in total) can be individually selected to be an input or output
+- You need to place as many Nodes to your flows as many pins you use.
+- 4 states of a node: `On=green`   `Off=grey`   `Uninitialised=yellow`   `Error=red`
+
+Requires 'i2c-bus' module. [link...](https://github.com/fivdi/i2c-bus)
+( _It gets automatically installed, except if you want to use it directly from function nodes._ )
 
 # Inputs
 
